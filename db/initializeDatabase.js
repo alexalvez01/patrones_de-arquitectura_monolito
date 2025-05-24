@@ -10,12 +10,30 @@ function createTables() {
         name TEXT NOT NULL,
         price REAL NOT NULL
       )
+      
     `,
       (err) => {
         if (err) {
           console.error("Error al crear la tabla productos:", err.message);
         } else {
           console.log("Tabla productos creada o ya existe.");
+        }
+      }
+    );
+    db.run(
+      `
+      CREATE TABLE IF NOT EXISTS sells (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        price REAL NOT NULL
+      )
+      
+    `,
+      (err) => {
+        if (err) {
+          console.error("Error al crear la tabla ventas:", err.message);
+        } else {
+          console.log("Tabla ventas creada o ya existe.");
         }
       }
     );

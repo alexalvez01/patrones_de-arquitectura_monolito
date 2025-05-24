@@ -23,6 +23,8 @@ app.get("/", (req, res) => {
 
 const productosRouter = require("./routes/products");
 app.use("/products", productosRouter);
+const ventasRouter = require("./routes/sells");
+app.use("/sells", ventasRouter);
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
